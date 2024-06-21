@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Adiciona border-box para todos os elementos */
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+}
+
+body {
+    background-color: antiquewhite;
+    overflow-x: hidden; /* Evita overflow horizontal na página */
+}
+
+/* Header */
+header {
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px; /* Espaçamento interno */
+    overflow-x: hidden; /* Evita overflow horizontal no header */
+}
+
+#logo {
+    border: 1px solid black;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-bar li {
+    margin-left: 20px;
+    border: 1px solid transparent;
+    padding: 2px 5px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-bar li a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-bar li:hover {
+    border: 1px solid black;
+}
+
+/* main */
+main {
+    width: 100%;
+    height: 75vh;
+}
+
+/* inicio */
+.inicio {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 40%;
+    text-align: start;
+}
+
+.btn {
+    margin-top: 10px;
+}
+
+button {
+    background-color: rgb(100, 53, 26);
+    padding: 10px;
+    width: 30%;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* menu */
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.cards {
+    width: 80%;
+    height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Três colunas por linha */
+    gap: 20px; /* Espaçamento entre os cards */
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas por linha */
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr; /* Uma coluna por linha */
+    }
+}
+
+.card {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: start;
+    opacity: 0; /* Começa com opacidade zero para o efeito de fade-in */
+    transition: opacity 0.5s ease; /* Transição suave da opacidade */
+
+    /* Adiciona margem inferior para separar os cards */
+    margin-bottom: 20px;
+}
+
+.card.fade-in {
+    opacity: 1; /* Quando a classe fade-in é adicionada, opacidade vai para 1 */
+}
+
+#btnCard {
+    width: 100%;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 3vh;
+    font-size: 0.8em;
+    text-align: center;
+    padding: 10px 0;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(100, 53, 26, 0.363); 
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(100, 53, 26); 
+    border-radius: 10px;
+}
+
+/* Handle ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(75, 40, 20); 
+}
+
+::-webkit-scrollbar-track-piece{
+    margin: 10px, 0px;
+}
