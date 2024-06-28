@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 * {
     padding: 0;
     margin: 0;
@@ -11,6 +11,7 @@
 body {
     background-color: antiquewhite;
     overflow-x: hidden; /* Evita overflow horizontal na página */
+    overflow-y: hidden;
 }
 
 /* Header */
@@ -66,6 +67,14 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: .5s ease-out;
+    overflow-y: hidden;
+    
+}.inicio.fade{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .container {
@@ -96,9 +105,11 @@ button:hover {
 .menu {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     display: none;
+    text-align: center;
 }
 
 .cards {
@@ -115,6 +126,8 @@ button:hover {
 @media (max-width: 992px) {
     .cards {
         grid-template-columns: repeat(2, 1fr); /* Duas colunas por linha */
+    }.container{
+        width: 80%;
     }
 }
 
@@ -122,6 +135,10 @@ button:hover {
     .cards {
         grid-template-columns: 1fr; /* Uma coluna por linha */
     }
+    .btn{
+        width: 100%;
+    }
+
 }
 
 .card {
@@ -129,11 +146,12 @@ button:hover {
     padding: 20px;
     border-radius: 10px;
     text-align: start;
-    opacity: 0; /* Começa com opacidade zero para o efeito de fade-in */
-    transition: opacity 0.5s ease; /* Transição suave da opacidade */
-
-    /* Adiciona margem inferior para separar os cards */
+    opacity: 0;
+    transition: opacity 0.5s ease; 
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card.fade-in {
@@ -177,4 +195,32 @@ footer {
 
 ::-webkit-scrollbar-track-piece{
     margin: 10px, 0px;
+}
+
+#notFoundMessage{
+    display: none;
+}
+
+.search-area{
+    display: flex;
+    justify-content: start;
+    width: 75%;
+    align-items: center;
+    margin-bottom: 20px;
+}.search-area Label{
+    font-weight: 800;
+    color: rgb(75, 40, 20);
+}
+
+#searchInput{
+    padding: 7px;
+    border: 2px solid rgb(75, 40, 20);
+    outline: none;
+    letter-spacing: .5px;
+    background: none;
+    border-radius: 20px;
+    margin-left: 10px;
+    width: 100%;
+    color: rgb(75, 40, 20);
+    font-weight: 800;
 }
